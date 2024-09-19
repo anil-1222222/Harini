@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<router-outlet></router-outlet>
+
+<div class="container11">
+    <form #frm="ngForm" (ngSubmit)="FormData(frm)" class="box">
+      <h4>USER LOGIN</h4>
+         <input type="text" name="email" placeholder="Email Id" ngModel #email="ngModel">
+         <input type="password" name="pass" placeholder="Password" ngModel #pass="ngModel">
+      <input type="submit" value="Login">
+    </form>
+</div>

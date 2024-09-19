@@ -1,0 +1,62 @@
+<div id="sect1">
+    <header class="main-header-1">
+        <div>
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">Car Rental</a>
+            </div>
+            <nav class="navigation">
+                <a routerLink="/userpage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Back</a>
+                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Log-out</a>
+            </nav>
+    </header>
+  
+    <h1  style="text-align: center;color: black;">Billing Information</h1>
+    <div class="enroll" style="margin-top: 10px">
+  <form #s="ngForm" (ngSubmit)="onSubmit(s)"> 
+      <div class="form-group">
+       <!-- <label for="medicineId">Medicine Id </label> -->
+        <input type="hidden" name="carId" [(ngModel)] = "car.carId" readonly/>
+    </div>
+    <h3>Confirm Your Car</h3>
+        <div class="form-group">
+          <label>Car Name </label>
+          <input type="text" style="margin-left: 20px ; width: 150px;"  name="carName" [(ngModel)] = "car.carName" readonly/>
+      </div>
+          <h3>Please Enter The Required Details To Proceed</h3>
+      <div class="form-group">
+      Choose the Payment Method
+      <select name="demo" id="#">
+          <option selected="selected" value="one">Debit Card</option>
+          <option value="two">Credit Card</option>
+          <option value="three">UPI</option>
+          </select>
+          </div>
+          <div class="form-group">
+              <label> Card Number/UPI Id </label>
+              <input type="text" required class="form-control" name="id" ngModel #id="ngModel"/>
+              <span 
+            *ngIf="id.invalid && id.touched" class="error">required</span>
+        </div>
+        <div class="form-group">
+          <label> Address Line 1 </label>
+          <input type="text" style="margin-left: 38px ; width: 164px;"  required class="form-control" name="a1" ngModel #a1="ngModel"/>
+          <span 
+            *ngIf="a1.invalid && a1.touched" class="error">required</span>
+    </div>
+    <div class="form-group">
+      <label> Address Line 2 </label>
+      <input type="text" style="margin-left: 38px ; width: 164px;" required class="form-control" name="a2" ngModel #a2="ngModel"/>
+      <span 
+            *ngIf="a2.invalid && a2.touched" class="error">required</span>
+  </div>
+  <div class="form-group">
+      <label> Address Line 3 </label>
+      <input type="text"  style="margin-left: 38px ; width: 164px;" required class="form-control" name="a3" ngModel #a3="ngModel"/>
+      <span 
+            *ngIf="a3.invalid && a3.touched" class="error">required</span>
+  </div>
+      <br>  <input [disabled]="s.invalid" type="submit" class="button" value="CONFIRM"/>
+  
+  <button (click)="back()" class="buttonon">ABORT</button>
+  </form>
+  <router-outlet></router-outlet>
+  

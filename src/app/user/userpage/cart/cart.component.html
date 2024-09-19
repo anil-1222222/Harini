@@ -1,0 +1,54 @@
+<div id="sect1">
+    <header class="main-header-1">
+        <div>
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">Car Rentals</a>
+        </div>
+        <nav class="navigation">
+            <a routerLink="/userpage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="main-items">Back</a>
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="main-items">Logout</a>
+        </nav>
+    </header>
+    <router-outlet></router-outlet>
+    <h1 style="text-align: center;color: rgba(113, 7, 7, 0.589);">My Cart</h1>
+
+    <div>
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                    <tr>
+
+                        <th>Car Name</th>
+                        <th>Car Model</th>
+                        <th>Car Rent</th>
+                        <th>Car Pic</th>
+                        <th>Proceed For Payment</th>
+                        <th>Remove From Cart</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of carts">
+
+                        <td>{{cart.carName}}</td>
+                        <td>{{cart.carModel}}</td>
+                        <td>{{cart.rentPrice}}</td>
+                        <td><img src="{{cart.carPic}}" width="100px" height="70px"></td>
+
+                        <td> <button class="btn btn-primary" (click)="Pay(cart.carId,cart.rentPrice)">Book Now</button></td>
+                            <!-- <td> <a routerLink="/billing/{{cart.carId}}" class="button">Book Now</a></td> -->
+                        <!-- <td><a href="http:" target="_blank" rel="noopener noreferrer">Buy Now</a></td> -->
+                        <td> <button (click)="deleteCart(cart.carId)" class="buttonon">Remove From Cart</button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <button class="dropdown-item" (click)="payment()">Proceed to checkout</button> -->
+
+        </div>
+
+    </div>
+</div>
+<router-outlet></router-outlet>

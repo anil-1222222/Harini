@@ -1,0 +1,46 @@
+<div id="sect1" >
+    <header class="main-header-1">
+      <div>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">Car Rental</a>
+      </div>
+      <nav class="navigation">
+        <a routerLink="/adminpage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Back</a>
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Log-out</a>
+      </nav>
+    </header>
+
+    
+ 
+    <h1 style="text-align: center; color: black;">Add Car</h1>
+    <div class="card-container">
+    <div class="card">
+      <form Class="Add_Med" #s="ngForm" (ngSubmit)="onSubmit(s)">
+      <div class="form-group">
+        <label for="carName">&emsp;Car Name&emsp;</label>
+        <input type="text" style="width: 250px;" required class="form-control" name="carName" ngModel #carName="ngModel" />
+        <span *ngIf="carName.invalid && carName.touched" class="error">Cannot submit form if required fields are not filled</span>
+      </div>
+      <div class="form-group">
+        <label for="carName">&emsp;Car Model&emsp;</label>
+        <input type="text" style="width: 250px;" required class="form-control" name="carModel" ngModel #carModel="ngModel" />
+        <span *ngIf="carModel.invalid && carModel.touched" class="error">Cannot submit form if required fields are not filled</span>
+      </div>
+      <div class="form-group">
+        <label for="carPrice">&emsp;Car Rent/day&emsp;</label>
+        <input type="text" style="width: 250px;" required class="form-control" name="rentPrice" ngModel #rentPrice="ngModel" />
+        <span *ngIf="rentPrice.invalid && rentPrice.touched" class="error">Cannot submit form if required fields are not filled</span>
+      </div>
+      <div class="form-group">
+        <label for="carName">&emsp;Car image Adress&emsp;</label>
+        <input type="text" style="width: 350px;" required class="form-control" name="carPic" ngModel #carPic="ngModel" />
+        <span *ngIf="carPic.invalid && carPic.touched" class="error">Cannot submit form if required fields are not filled</span>
+      </div>
+      
+      <div class="button-container">
+      <button class="btn btn-danger">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>

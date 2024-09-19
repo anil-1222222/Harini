@@ -1,0 +1,61 @@
+<div id="sect1">
+  
+    <header class="main-header-1">
+        <div>
+          <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">Car Rental</a>
+        </div>
+        <nav class="navigation">
+          <a routerLink="addcar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Add Car</a>
+          <a routerLink="viewcontactus" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Queries</a>
+          <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  class="main-items">Log-out</a>
+        </nav>
+      </header>
+      <router-outlet></router-outlet>
+        <!-- <h1 style="text-align: center;" class="heading_design"> <span>List of <span>Cars</span> </span></h1> -->
+        <br>
+        <div>
+            <input  type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search by Car name">
+       
+
+  <div class="doc" style="text-align: center;">
+    <table border="3"  class="fl-table" align="center">
+      <tr>
+        <th>Car Name</th>
+        <th>Car Model</th>
+        <th>Rent Cost/Day</th>
+        <th>Car Pic</th>
+        <th>Status</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let car of cars | searchCar: searchText">
+
+        <td>{{car.carName}}</td>
+        <td>{{car.carModel}}</td>
+        <td>{{car.rentPrice}}</td>
+        <td><img src="{{car.carPic}}" width="100px" height="70px"></td>
+
+        <td>
+          
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch"  (change)="checkCheckBoxvalue($event,car.carId,car.carName,car.carModel,car.rentPrice,car.carPic)" >  {{car.isAvailable}}
+        </div>
+      </td>
+        <td><a routerLink="/updatecar/{{car.carId}}" class="button">UPDATE</a></td>
+        <td><button (click)="deleteCar(car.carId)" class="buttonon">DELETE</button></td>
+
+      </tr>
+    </table>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+    </div>
+    <!--<button class="dropdown-item" (click)="payment()">Proceed to checkout</button> -->
+  </div>
+</div>

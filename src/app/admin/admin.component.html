@@ -1,0 +1,16 @@
+<app-header></app-header>
+<!-- <div id="sect1"></div> -->
+<!-- <div class="container"> -->
+<router-outlet></router-outlet>
+<body>
+    <form class="box" #frm="ngForm" (ngSubmit)="OnData(frm)">
+         <h2>ADMIN LOGIN</h2>
+         <div class="inputbox">
+            <input type="text" name="username" placeholder="Email Id" ngModel #username="ngModel">
+         </div>
+         <div class="inputbox">
+            <input type="password" name="password" placeholder="Password" ngModel #password="ngModel">
+         </div>
+         <input type="submit" value="Login">
+    </form>
+</body>

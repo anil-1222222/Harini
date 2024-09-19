@@ -1,0 +1,152 @@
+/* Common styles */
+#sect1 {
+    /*background-image: url('src/assets/pic/t7.jpeg');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100vw; /* Use viewport width to cover the entire width of the screen */
+    height:150vh; /* Use viewport height to cover the entire height of the screen */
+    /* Use fixed positioning to make sure it covers the entire viewport */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+  }
+  
+  .error{
+    color: red;
+  }
+  
+  
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    height: 150vh;
+   
+  }
+  
+  .card {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 400px; /* Set a maximum width if necessary */
+    padding: 20px; /* Add padding to the card */
+    margin: 20px; /* Add margin to the card */
+    background-color: #96eac9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: -150px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Adjust the margin between form groups */
+  }
+  
+  .main-header-1 {
+    background-color: #008080;
+    padding: 10px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    position: relative;
+    line-height: 38px;
+  }
+  
+  .main-header-1 > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .navigation {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding: 8px;
+    z-index: 1;
+    display: inline-block;
+    text-align: right;
+    width: fit-content;
+    margin-left: 75%;
+  }
+  
+  .main-items {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 38px;
+  }
+  
+  .navigation > a {
+    display: inline-block;
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: 900;
+    color: white;
+  }
+  
+  /* Add your form styling here */
+  
+  /* Add your form styling here */
+  
+  /* Add your existing styles above */
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+  
+  
+  .button,
+  .buttonon {
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #3af315;
+    color: #0f0f0f;
+    border: none;
+    border-radius: 8px;
+  
+  }
+  
+  .button:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+    color: black;
+  }
+  
+  .buttonon {
+    margin: 2px 2px;
+    background-color: #f32839;
+    color: white;
+    padding: 5px 23px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles using Bootstrap classes */
+  @media (max-width: 768px) {
+    .logo {
+      left: 0;
+    }
+  
+    .navigation {
+      position: static;
+      text-align: center;
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .button,
+    .buttonon {
+      margin-left: 0;
+    }
+    
+  }
+  

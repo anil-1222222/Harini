@@ -1,0 +1,68 @@
+<div id="sect1" >
+    <header class="main-header-1">
+        <div>
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">Welcome
+               
+            </a>
+        </div>
+        <nav class="navigation">
+            <a routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="main-items"> Update Profile </a>
+
+            <a routerLink="/cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="main-items"> My Cart</a>
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="main-items">Log-out</a>
+
+        </nav>
+    </header>
+    <router-outlet></router-outlet>
+    <h1 style="text-align:center;color: rgb(207, 11, 77);">Available Cars For Rent</h1>
+
+   <div>
+        <input  type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search by Car name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Select [(ngModel)]="selectedOption" (change)="onSelectChange($event)" class="drop">
+            <option *ngFor="let i of carNames">
+                {{i}}
+            </option>
+        </Select>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+
+                    <th>Car Name</th>
+                    <th>Car Model</th>
+                    <th>Rent Cost/Day</th>
+                    <th>Car Pic</th>
+                    <th>Proceed For Payment</th>
+                    <th>Add To Cart</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let car of cars | searchCar: searchText">
+
+                    <td>{{car.carName}}</td>
+                    <td>{{car.carModel}}</td>
+                    <td>{{car.rentPrice}}</td>
+                    <td><img src="{{car.carPic}}" width="100px" height="70px"></td>
+                    
+                    <td> <button class="btn btn-primary" (click)="Pay(car.carId,car.rentPrice)">Book Now</button></td>
+                    <td> <button class="buttonon" (click)="addCart(car.carId)"> Add To Your Cart
+                        </button></td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </div>
+</div>
+</div>

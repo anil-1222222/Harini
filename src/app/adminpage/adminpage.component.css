@@ -1,0 +1,198 @@
+#background-container {
+    position: relative;
+  }
+  
+  #sect1 {
+    /*background-image: url('src\assets\pic\p3.jpg');*/
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
+    opacity: 1;
+    top: 0; /* Add this to position the background at the top of the container */
+  }
+  
+  
+  
+  .Add_Med {
+    padding: 100px;
+  }
+
+  
+  .main-header-1 {
+    background: linear-gradient(to right, #008080, #004466); /* Gradient background */
+    box-shadow: 0px 5px 10px rgba(224, 205, 205, 0.2); /* Add a subtle box shadow */
+  }
+  
+  .logo {
+    font-weight: bold;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    position: relative;
+    left: 8%;
+    line-height: 38px;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  .logo:hover {
+    color: #00a8e8; 
+  }
+  .main-header-1 > div {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+  }
+  .navigation {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding: 8px;
+    z-index: 1;
+    display: inline-block;
+    text-align: right;
+    width: fit-content;
+    margin-left: 70%;
+    background: rgba(169, 157, 157, 0.2); /* Semi-transparent background */
+    border-radius: 20px;
+    margin-top: 1px; /* Add some top margin */
+  }
+  .main-items {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 38px;
+    color: #76b5e9; /* White text color */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .navigation > a {
+    display: inline-block;
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: 900;
+    color: white;
+  }
+  .content {
+    width: 100%;
+    height: 540px;
+    background-size: cover;
+  }
+  .head1 {
+    position: relative;
+    top: 45%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+    font-weight: 800;
+  }
+  .amenities {
+    height: 300px;
+    position: relative;
+    top: 5%;
+    background-color: beige;
+  }
+  .ul-list1 {
+    text-align: center;
+    list-style: none;
+    width: auto;
+    background-color: beige;
+    background-position: center;
+  }
+  .button:hover{
+    background-color: #d4e72f;
+  }
+  .button {
+    background-color: #ad0d95;
+    border: none;
+    border-radius: 200px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .buttonon:hover{
+    background-color: #b5c134;
+  }
+  .buttonon {
+    background-color: #ba3606;
+    border-radius: 200px;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .heading_design{
+    color: #f5f3f3;
+   
+  }
+  
+  /* Table Styles */
+  .doc {
+      margin: 25px 20px 80px;
+      box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+    }
+    
+    .fl-table {
+      border-radius: 5px;
+      font-size: 16px; /* Adjusted font size for better readability on smaller screens */
+      font-weight: normal;
+      border: none;
+      border-collapse: collapse;
+      width: 100%;
+      white-space: nowrap;
+      background-color: white;
+    }
+    
+    .fl-table td,
+    .fl-table th {
+      text-align: center;
+      padding: 8px;
+    }
+    
+    .fl-table td {
+      border-right: 1px solid #f8f8f8;
+    }
+    
+    .fl-table th {
+      color: #f80c0c;
+      background: #4fc3a1;
+    }
+    
+    .fl-table th:nth-child(odd) {
+      color: #ffffff;
+      background: #d8a90e;
+    }
+    
+    .fl-table tr:nth-child(even) {
+      background: #f8f8f8;
+    }
+  
+  #searchTextId {
+    border-radius: 50px;
+    padding: 12px 20px;
+    padding-left: 15px;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border: 1px solid #ad0d95;
+    box-shadow: 0 0 10px rgba(173, 13, 149, 0.4); /* Add a subtle box shadow */
+  }
+  
+  
+  /* Additional hover effect for more interactivity */
+  #searchTextId:hover {
+    background-color: #d8d1d1;
+  }
+  
+    
+    
